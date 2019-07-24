@@ -38,3 +38,35 @@ function prepareTheRisotto(callback) {
   callback();
   cleanUp();
 }
+
+// Let's simulate. JS has built in waiting functions for show.
+// In console...
+function whatIWantToDo() {
+  console.log('Hey waiter!!! Get yer arse here and serve!');
+}
+window.setTimeout(whatIWantToDo, 3000);
+
+// No need to create a function here. This is very important to understand.
+// The above code does the same thing as the one below, functions are values, and
+// the second call is just function defined in place
+window.setTimeout(function () {
+  console.log('Hey waiter!!! Get yer arse here and serve!');
+}, 3000);
+
+// And in our example
+function cookIngredients(callback) {
+  window.setTimeout(callback, 3000);
+}
+
+function serveRisotto() {
+  console.log('Hey waiter!!! Get yer arse here and serve!');
+}
+
+function prepareTheRisotto(callback) {
+  filterOutIngredients();
+  cookIngredients(serveRisotto);
+  cleanUp();
+}
+// Now the cook is free to continue cleaning up.
+// Very important to notice how cleanUp() is going to get executed immediately
+// after, not wait on serve.

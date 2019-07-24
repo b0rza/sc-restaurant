@@ -63,6 +63,8 @@ function filterOutIngredients() {
 }
 
 // We can do this because, you will remember: functions are values in javascript
+// Therefore they can be passed in as arguments
+
 // This approach is invaluable because later we'll need ingredients
 // that need to be: chopped, boiled, cured
 
