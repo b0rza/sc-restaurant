@@ -1,0 +1,21 @@
+eat a plate of baked: tomato, mozzarella, basil on dough
+vs
+common pizza
+
+You're not going to say:
+1. cook pizza
+2. serve pizza
+
+Or even worse:
+1. make dough
+2. put common pizza ingredients on the dough
+3. bake the dough
+4. bring me the dough
+
+That's imperative programming, we're not doing that!
+That's the difference between imperative and functional.
+Let's always apply the latter principle.
+We want to say just make pizza. Kitchen chef has to do those things, or does he?
+
+kitchen chef:
+makeDough()

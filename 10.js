@@ -26,6 +26,7 @@ function fulfillOrder(orders) {
 
 // Now our dinner looks sane
 function haveDinner() {
+var orders = ['pizza', 'pineapple pizza'];
   return fulfillOrder(orders)
     .then(serve)
     .then(eat)

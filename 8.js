@@ -4,14 +4,6 @@ var order = {
   plate: ''
 }
 
-// Depending on the length of the callback chain, this can get pretty ugly...
-function cook(order) {
-  var cookPizza = function(order) {
-    bake(putTopping(makeDough(order)))
-    // bake(putTopping(refrigerate(makeDough(whisk(order)))))
-  }
-}
-
 // =========================================
 // JS introduces promises!
 // They allow for a nicer syntax that makes the code look sequential
@@ -32,7 +24,7 @@ function makeDough(order) {
 
   return new Promise((resolve) => {
     return window.setTimeout(function(order) {
-      var result = 'dough for ' + order;
+      var result = 'raised dough for ' + order;
       resolve(result);
     }, 1000)
   })
@@ -56,12 +48,12 @@ function cook(order) {
     return makeDough(order).then(putTopping).then(bake);
   };
 
-  if(order = 'pizza') {
+  if (order === 'pizza') {
     return makePizza();
   }
 }
 
-function bake(order) {
+function bake(preppedMeal) {
   hasPineappleOrOnions = preppedMeal.includes('onions');
   var TIME_TO_BAKE = hasPineappleOrOnions() ? 5000 : 3000;
 
